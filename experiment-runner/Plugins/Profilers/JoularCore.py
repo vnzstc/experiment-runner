@@ -31,7 +31,7 @@ class JoularCore(CLISource):
     """
 
     parameters = ParameterDict(JOULARCORE_PARAMETERS)
-    source_name = "joularcore"
+    source_name = "sudo joularcore"
     supported_platforms = ["Linux", "Darwin", "Windows"]
 
     def __init__(

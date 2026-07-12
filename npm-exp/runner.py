@@ -7,10 +7,16 @@ from ConfigValidator.Config.Models.OperationType import OperationType
 from ExtendedTyping.Typing import SupportsStr
 from ProgressManager.Output.OutputProcedure import OutputProcedure as output
 
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 from pathlib import Path
 from os.path import dirname, realpath
 
+import configparser
+import os
+import subprocess
+import shlex
+import time
+import uuid
 
 class RunnerConfig:
     ROOT_DIR = Path(dirname(realpath(__file__)))
@@ -19,96 +25,125 @@ class RunnerConfig:
     results_output_path:        Path            = ROOT_DIR / 'results'
     operation_type:             OperationType   = OperationType.AUTO
     time_between_runs_in_ms:    int             = 1000 # cool down between runs
-    #
-    # ================================ Runner Core Logic ================================ 
+    rapl_overflow_value                         = 262143.328850
+
+    # ---- SSH connection settings ----
+    # Loaded from connection.ini (gitignored) so credentials never get pushed.
+    # Copy connection.ini.example to connection.ini and fill in real values.
+    _conf_path = ROOT_DIR / 'connection.ini'
+    _conf = configparser.ConfigParser()
+    if _conf_path.exists():
+        _conf.read(_conf_path)
+    else:
+        raise FileNotFoundError(
+            f"Missing {_conf_path}."
+        )
+    _ssh = _conf["ssh"]
+ 
+    jump_host:                  str             = _ssh.get("jump_host")
+    jump_port:                  int             = _ssh.getint("jump_port", fallback=22)
+    jump_user:                  str             = _ssh.get("jump_user")
+    target_host:                str             = _ssh.get("target_host")
+    target_port:                int             = _ssh.getint("target_port", fallback=22)
+    target_user:                str             = _ssh.get("target_user")
+    # ssh_key_path:               Optional[str]  = _ssh.get("ssh_key_path", fallback=None) or None
+
+    # ================================ Runner Core Logic ================================
     def __init__(self):
         """Executes immediately after program start, on config load"""
-
         EventSubscriptionController.subscribe_to_multiple_events([
             (RunnerEvents.BEFORE_EXPERIMENT, self.before_experiment),
-            (RunnerEvents.BEFORE_RUN       , self.before_run       ),
+            # (RunnerEvents.BEFORE_RUN       , self.before_run       ),
             (RunnerEvents.START_RUN        , self.start_run        ),
-            (RunnerEvents.START_MEASUREMENT, self.start_measurement),
-            (RunnerEvents.INTERACT         , self.interact         ),
-            (RunnerEvents.STOP_MEASUREMENT , self.stop_measurement ),
+            #(RunnerEvents.START_MEASUREMENT, self.start_measurement),
+            #(RunnerEvents.INTERACT         , self.interact         ),
+            #(RunnerEvents.STOP_MEASUREMENT , self.stop_measurement ),
             (RunnerEvents.STOP_RUN         , self.stop_run         ),
-            (RunnerEvents.POPULATE_RUN_DATA, self.populate_run_data),
+            # (RunnerEvents.POPULATE_RUN_DATA, self.populate_run_data),
             (RunnerEvents.AFTER_EXPERIMENT , self.after_experiment )
         ])
+
         self.run_table_model = None  # Initialized later
+        #
+        # --- Connection Variables ---
+        self.jump_address = f"{self.jump_user}@{self.jump_host}:{self.jump_port}" 
+        self.target_address = f"{self.target_user}@{self.target_host}"            
+        self.proc = None
         output.console_log("Custom config loaded")
-
+    
     # @Observation --  not clear to a novice how to build the run table here.
-    def create_run_table_model(self) -> RunTableModel:
-        """Create and return the run_table model here. A run_table is a List (rows) of tuples (columns),
-        representing each run performed"""
+    #def create_run_table_model(self) -> RunTableModel:
+    #    factor1 = FactorModel("ex_fact1", ['ex_treat1'])
 
-        factor1 = FactorModel("example_factor1", ['example_treatment1', 'example_treatment2', 'example_treatment3'])
-        factor2 = FactorModel("example_factor2", [True, False])
+    #    self.run_table_model = RunTableModel(
+    #        factors=[factor1],
+    #        data_columns=['avg_cpu']
+    #    )
 
-        self.run_table_model = RunTableModel(
-            factors=[factor1, factor2],
-            exclude_combinations=[
-                {factor1: ['example_treatment1']},                   # all runs having treatment "example_treatment1" will be excluded
-                {factor1: ['example_treatment2'], factor2: [True]},  # all runs having the combination ("example_treatment2", True) will be excluded
-            ],
-            data_columns=['avg_cpu', 'avg_mem']
-        )
+    #    return self.run_table_model
 
-        return self.run_table_model
+    def _drain_startup_banner(self):
+        marker = f"__READY_{uuid.uuid4().hex}__"
+        self.proc.stdin.write(f"echo {marker}\n")
+        self.proc.stdin.flush()
+        for line in self.proc.stdout:
+            if marker in line:
+                break
 
     def before_experiment(self) -> None:
-        """Perform any activity required before starting the experiment here
-        Invoked only once during the lifetime of the program."""
+        jump_address = f"{self.jump_user}@{self.jump_host}:{self.jump_port}"
+        target_address = f"{self.target_user}@{self.target_host}" 
 
-        output.console_log("Config.before_experiment() called!")
+        self.proc = subprocess.Popen(
+            ['ssh', '-J', jump_address, target_address],
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, text=True, bufsize=1
+        )
+        
+        self._drain_startup_banner()
 
-    def before_run(self) -> None:
-        """Perform any activity required before starting a run.
-        No context is available here as the run is not yet active (BEFORE RUN)"""
+        output.console_log("Before Experiment")
 
-        output.console_log("Config.before_run() called!")
+    #def before_run(self) -> None:
+    #    output.console_log("Config.before_run() called!")
 
     def start_run(self, context: RunnerContext) -> None:
-        """Perform any activity required for starting the run here.
-        For example, starting the target system to measure.
-        Activities after starting the run should also be performed here."""
+        # Executes scripts that runs JoularCore and the treatment
+        self.proc.stdin.write('sudo ./profilers/profilers.sh sleep 2' + f'; echo __END__\n')
+        self.proc.stdin.flush()
+        res = []
+        for line in self.proc.stdout:
+            if '__END__' in line:
+                break
+            res.append(line)
+        output.console_log(res)
 
-        output.console_log("Config.start_run() called!")
+    #def start_measurement(self, context: RunnerContext) -> None:
+    #    output.console_log(f"Measurement started")
 
-    def start_measurement(self, context: RunnerContext) -> None:
-        """Perform any activity required for starting measurements."""
-        output.console_log("Config.start_measurement() called!")
+    #def interact(self, context: RunnerContext) -> None:
+    #    output.console_log("Config.interact() called!")
 
-    def interact(self, context: RunnerContext) -> None:
-        """Perform any interaction with the running target system here, or block here until the target finishes."""
-
-        output.console_log("Config.interact() called!")
-
-    def stop_measurement(self, context: RunnerContext) -> None:
-        """Perform any activity here required for stopping measurements."""
-
-        output.console_log("Config.stop_measurement called!")
+    #def stop_measurement(self, context: RunnerContext) -> None:
+    #    output.console_log("Config.stop_measurement() called!")
 
     def stop_run(self, context: RunnerContext) -> None:
-        """Perform any activity here required for stopping the run.
-        Activities after stopping the run should also be performed here."""
-
+        remote_path = 'power_measurement.csv'
+        cp_cmd = ['scp', '-O', '-J', self.jump_address, f'{self.target_user}@{self.target_host}:{remote_path}', 'power.csv']   
+        subprocess.run(cp_cmd, check=True)
         output.console_log("Config.stop_run() called!")
 
     def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, SupportsStr]]:
-        """Parse and process any measurement data here.
-        You can also store the raw measurement data under `context.run_dir`
-        Returns a dictionary with keys `self.run_table_model.data_columns` and their values populated"""
-
         output.console_log("Config.populate_run_data() called!")
         return None
 
+    # This is where we close the SSH connection opened in before_experiment.
     def after_experiment(self) -> None:
-        """Perform any activity required after stopping the experiment here
-        Invoked only once during the lifetime of the program."""
-
-        output.console_log("Config.after_experiment() called!")
-
+        self.proc.stdin.write('exit\n')
+        self.proc.stdin.flush()
+        self.proc.stdin.close()
+        self.proc.wait()
+        output.console_log("SSH Connection Closed")
+    
     # ================================ DO NOT ALTER BELOW THIS LINE ================================
     experiment_path:            Path             = None
