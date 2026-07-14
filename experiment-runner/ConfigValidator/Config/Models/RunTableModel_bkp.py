@@ -12,7 +12,7 @@ class RunTableModel:
     def __init__(self,
                  factors: List[FactorModel],
                  exclude_combinations: List[Dict[FactorModel, List[SupportsStr]]] = None,
-                 include_rows: List[Dict[FactorModel, List[SupportsStr]]] = None,
+                 include_rows: List[Dict[FactorModel, List[SupportsStr]]] = None, 
                  repetitions: int = 1,
                  data_columns: List[str] = None,
                  shuffle: bool = False
@@ -21,8 +21,8 @@ class RunTableModel:
         if exclude_combinations is None:
             exclude_combinations = {}
 
-        if include_rows is None:
-            include_rows = []
+        if include_rows is None: 
+            include_rows = {}    
 
         if data_columns is None:
             data_columns = []
@@ -38,7 +38,7 @@ class RunTableModel:
 
         self.__factors = factors
         self.__exclude_combinations = exclude_combinations
-        self.__include_rows = include_rows
+        self.__include_rows = include_rows 
         self.__repetitions = repetitions
         self.__data_columns = data_columns
         self.__shuffle = shuffle
@@ -56,6 +56,7 @@ class RunTableModel:
 
             to_remove_indices = []
             for exclusion in self.__exclude_combinations:
+                # Construct the exclusion tuples
                 list_of_lists = []
                 indexes = []
                 for factor, treatment_list in exclusion.items():
@@ -63,6 +64,7 @@ class RunTableModel:
                     indexes.append(self.__factors.index(factor))
                 exclude_combinations_list = list(itertools.product(*list_of_lists))
 
+                # Mark the exclusions in the full table
                 for idx, elem in enumerate(full_list):
                     for exclude_combo in exclude_combinations_list:
                         if all([exclude_combo[i] == elem[indexes[i]] for i in range(len(indexes))]):
@@ -73,51 +75,41 @@ class RunTableModel:
                 del full_list[idx]
             return full_list
 
-        # Store intermediate rows as dictionaries
-        rows: List[Dict[str, SupportsStr]] = []
-
-        if self.__include_rows:
-            for spec in self.__include_rows:
-                # Get the factors defined in this specification block (e.g., alg, subjects)
-                spec_factors = list(spec.keys())
-                # Gather their matching value lists
-                spec_value_lists = [spec[f] for f in spec_factors]
-
-                # Pair them up properly (e.g. ['node-tar'] x ['pkg1', 'pkg2'])
-                for combo in itertools.product(*spec_value_lists):
-                    row_dict = {}
-                    for factor, value in zip(spec_factors, combo):
-                        row_dict[factor.factor_name] = value
-                    rows.append(row_dict)
-
-        elif self.__exclude_combinations:
+        rows = []
+        if self.__exclude_combinations:
             list_of_lists = [factor.treatments for factor in self.__factors]
             combinations_list = list(itertools.product(*list_of_lists))
-            filtered_list = __filter_list(combinations_list)
+            rows = __filter_list(combinations_list)
 
-            # Convert standard tuples into dicts matching factor names
-            for combo in filtered_list:
-                row_dict = {}
-                for factor, value in zip(self.__factors, combo):
-                    row_dict[factor.factor_name] = value
-                rows.append(row_dict)
+        elif self.__include_rows:
+            for spec in self.__include_rows:
+                for factor, levels in spec.items():
+                    for level in levels:
+                        rows.append({factor.factor_name: level})
+
+        print(rows)
+        column_names = ['__run_id', '__done']
+
+        for factor in self.__factors:
+            column_names.append(factor.factor_name)
+
+        if self.__data_columns:
+            for data_column in self.__data_columns:
+                column_names.append(data_column)
 
         experiment_run_table = []
 
         for j in range(self.__repetitions):
-            for i, base_row in enumerate(rows):
-                row_dict = {
-                    '__run_id': f'run_{i}_repetition_{j}',
-                    '__done': RunProgress.TODO
-                }
-
-                row_dict.update(base_row)
+            for i, combo in enumerate(rows):
+                row_list = list(combo)
+                row_list.insert(0, f'run_{i}_repetition_{j}')  # __run_id
+                row_list.insert(1, RunProgress.TODO)  # __done
 
                 if self.__data_columns:
-                    for data_column in self.__data_columns:
-                        row_dict[data_column] = " "
+                    for _ in self.__data_columns:
+                        row_list.append(" ")
 
-                experiment_run_table.append(row_dict)
+                experiment_run_table.append(dict(zip(column_names, row_list)))
 
         if self.__shuffle:
             random.shuffle(experiment_run_table)

@@ -27,7 +27,7 @@ class RunnerConfig:
     time_between_runs_in_ms:    int             = 1000 # cool down between runs
     rapl_overflow_value                         = 262143.328850
 
-    # ================================ SSH CONNECTION SETTINGS ================================ 
+    # ================================ SSH CONNECTION SETTINGS ================================
     _conf_path = ROOT_DIR / 'connection.ini'
     _conf = configparser.ConfigParser()
     if _conf_path.exists():
@@ -37,7 +37,7 @@ class RunnerConfig:
             f"Missing {_conf_path}."
         )
     _ssh = _conf["ssh"]
- 
+
     jump_host:                  str             = _ssh.get("jump_host")
     jump_port:                  int             = _ssh.getint("jump_port", fallback=22)
     jump_user:                  str             = _ssh.get("jump_user")
@@ -62,25 +62,67 @@ class RunnerConfig:
         ])
 
         self.run_table_model = None  # Initialized later
-        #
-        # ================================ CONNECTION STRINGS ================================ 
-        self.jump_address = f"{self.jump_user}@{self.jump_host}:{self.jump_port}" 
-        self.target_address = f"{self.target_user}@{self.target_host}"            
+        # ================================ CONNECTION STRINGS ================================
+        self.jump_address = f"{self.jump_user}@{self.jump_host}:{self.jump_port}"
+        self.target_address = f"{self.target_user}@{self.target_host}"
         self.proc = None
-        # ================================ SERVER PATHS ================================  
+        # ================================ SERVER PATHS ================================
         self.target_exp_dir = 'npm-exp'
         self.target_res_dir = f'{self.target_exp_dir}/results'
+        self.target_pkg_dir = f'{self.target_exp_dir}/pkgs'
+        self.cmds = {
+            'node-tar' : 'tar -xzf',
+            'xz' : 'xz -d'
+        }
         self.target_run_dir = ''
 
         output.console_log("Custom config loaded")
-    
+
+    def _list_remote_subjects(self, alg_key: str) -> list[str]:
+        remote_path = f'{self.target_pkg_dir}/{alg_key}'
+        jump_address = f"{self.jump_user}@{self.jump_host}:{self.jump_port}"
+        target_address = f"{self.target_user}@{self.target_host}"
+
+        cmd = ['ssh', '-i', self.ssh_key_path,'-J', jump_address, target_address, f'ls -1 {remote_path}']
+        out = subprocess.check_output(cmd, text=True)
+        return [line for line in out.strip().splitlines() if line]
+
     def create_run_table_model(self) -> RunTableModel:
-        factor1 = FactorModel("ex_fact1", ['ex_treat1', 'ex_treat2'])
+        subjects_per_alg = {a: self._list_remote_subjects(a) for a in self.cmds.keys()}
+
+        alg = FactorModel(
+            "alg", self.cmds.keys()
+        )
+
+        all_subjects = sorted(set().union(*subjects_per_alg.values()))
+        subjects = FactorModel("subject", all_subjects)
+
+        include_rows_spec = []
+        for alg_name, subject_list in subjects_per_alg.items():
+            include_rows_spec.append({
+                alg: [alg_name],
+                subjects: subject_list
+            })
 
         self.run_table_model = RunTableModel(
-            factors=[factor1],
-            data_columns=['avg_cpu']
+            factors=[alg, subjects],
+            include_rows=include_rows_spec,
+            shuffle=True,
+            data_columns=['avg_energy']
         )
+        # Only the (alg, subject) pairs that actually belong together
+        #run_configs = [
+        #    (alg, subject)
+        #    for alg, subjects in subjects_per_alg.items()
+        #    for subject in subjects
+        #]
+
+        #run_config = FactorModel("run_config", run_configs)
+
+        #self.run_table_model = RunTableModel(
+        #    factors=[run_config],
+        #    data_columns=['avg_energy']
+        #)
 
         return self.run_table_model
 
@@ -94,7 +136,7 @@ class RunnerConfig:
 
     def before_experiment(self) -> None:
         jump_address = f"{self.jump_user}@{self.jump_host}:{self.jump_port}"
-        target_address = f"{self.target_user}@{self.target_host}" 
+        target_address = f"{self.target_user}@{self.target_host}"
 
         self.proc = subprocess.Popen(
             ['ssh', '-i', self.ssh_key_path,'-J', jump_address, target_address],
@@ -104,10 +146,11 @@ class RunnerConfig:
 
         self._drain_startup_banner()
 
-        # Create Results Dir on the Server 
-        self.proc.stdin.write(f"mkdir {self.target_res_dir}\n")
+        # Create Results DIR on the Server
+        self.proc.stdin.write(
+            f"rm -rf {self.target_res_dir}; mkdir {self.target_res_dir}\n"
+        )
         self.proc.stdin.flush()
-
         output.console_log("Before Experiment")
 
     def before_run(self) -> None:
@@ -115,10 +158,10 @@ class RunnerConfig:
         output.console_log("Config.before_run() called!")
 
     def start_run(self, context: RunnerContext) -> None:
-        # Create run dir on the server                                 
-        self.target_run_dir = f'{self.target_res_dir}/{basename(context.run_dir)}' 
-        self.proc.stdin.write(f"mkdir {self.target_run_dir}\n")        
-        self.proc.stdin.flush()                                        
+        # Create run result dir on the server
+        self.target_run_dir = f'{self.target_res_dir}/{basename(context.run_dir)}'
+        self.proc.stdin.write(f"mkdir {self.target_run_dir}\n")
+        self.proc.stdin.flush()
 
         self.proc.stdin.write(f'sudo npm-exp/profile.sh {self.target_run_dir} sleep 5' + f'; echo __END__\n')
         self.proc.stdin.flush()
@@ -159,6 +202,6 @@ class RunnerConfig:
         self.proc.stdin.close()
         self.proc.wait()
         output.console_log("SSH Connection Closed")
-    
+
     # ================================ DO NOT ALTER BELOW THIS LINE ================================
     experiment_path:            Path             = None
