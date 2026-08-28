@@ -17,6 +17,7 @@ import subprocess
 import shlex
 import time
 import uuid
+import csv
 
 class RunnerConfig:
     ROOT_DIR = Path(dirname(realpath(__file__)))
@@ -71,7 +72,7 @@ class RunnerConfig:
         self.target_res_dir = f'{self.target_exp_dir}/results'
         self.target_pkg_dir = f'{self.target_exp_dir}/pkgs'
         self.cmds = {
-            'node-tar' : 'tar -xzf',
+            'npm' : 'tar -xzf',
             'xz' : 'xz -d'
         }
         self.target_run_dir = ''
@@ -87,8 +88,23 @@ class RunnerConfig:
         out = subprocess.check_output(cmd, text=True)
         return [line for line in out.strip().splitlines() if line]
 
+    def _read_sample(self, alg_key: str) -> list[str]:
+        '''Reads a previously retrieved sample of packages.
+        The alg_key arg indicates the compression algorithm to consider.
+        '''
+        path = Path(f'npm-exp/pkgs/samples/{alg_key}.csv')
+        with path.open(newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            return [row['name'] for row in reader]
+
+    #def _read_sample(self, alg_key: str) -> list[str]:
+    #    path = Path(f'samples/{alg_key}.csv')
+    #    sample = pd.read_csv(path)
+    #    return sample['name'].astype(str).to_list()
+
     def create_run_table_model(self) -> RunTableModel:
-        subjects_per_alg = {a: self._list_remote_subjects(a) for a in self.cmds.keys()}
+        # subjects_per_alg = {a: self._list_remote_subjects(a) for a in self.cmds.keys()}
+        subjects_per_alg = {a: self._read_sample(a) for a in self.cmds.keys()} 
 
         alg = FactorModel(
             "alg", self.cmds.keys()
@@ -110,20 +126,6 @@ class RunnerConfig:
             shuffle=True,
             data_columns=['avg_energy']
         )
-
-        # Only the (alg, subject) pairs that actually belong together
-        #run_configs = [
-        #    (alg, subject)
-        #    for alg, subjects in subjects_per_alg.items()
-        #    for subject in subjects
-        #]
-
-        #run_config = FactorModel("run_config", run_configs)
-
-        #self.run_table_model = RunTableModel(
-        #    factors=[run_config],
-        #    data_columns=['avg_energy']
-        #)
 
         return self.run_table_model
 
@@ -159,12 +161,31 @@ class RunnerConfig:
         output.console_log("Config.before_run() called!")
 
     def start_run(self, context: RunnerContext) -> None:
+        #for d in self.run_table_model.experiment_run_table:
+        #    print(basename(context.run_dir))
+        #    print(d['__run_id'])
+        #    if d['__run_id'] == basename(context.run_dir):
+        #        print(d)
+        #        print('found')
+        #        break
+        #print('not_found')
         # Create run result dir on the server
         self.target_run_dir = f'{self.target_res_dir}/{basename(context.run_dir)}'
+        subject = next(
+            d['subject'] for d in self.run_table_model.experiment_run_table if d['__run_id'] == basename(context.run_dir)
+        )
+
+        key, pkg = Path(subject).parts
+        cmd_output = f'{self.target_run_dir}/decompressed/'
+        cmd = f'{self.cmds[key]} npm-exp/pkgs/{subject} -C {cmd_output}' 
+        # create run directory on the server
         self.proc.stdin.write(f"mkdir {self.target_run_dir}\n")
         self.proc.stdin.flush()
-
-        self.proc.stdin.write(f'sudo npm-exp/profile.sh {self.target_run_dir} sleep 5' + f'; echo __END__\n')
+        # create dir to store the output of the decompression
+        self.proc.stdin.write(f"mkdir {cmd_output}\n") 
+        self.proc.stdin.flush()
+        # self.proc.stdin.write(f'sudo npm-exp/profile.sh {self.target_run_dir} sleep 2' + f'; echo __END__\n') 
+        self.proc.stdin.write(f'sudo npm-exp/profile.sh {self.target_run_dir} {cmd}' + f'; echo __END__\n')
         self.proc.stdin.flush()
         res = []
         for line in self.proc.stdout:
