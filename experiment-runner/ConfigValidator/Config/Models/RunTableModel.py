@@ -42,6 +42,7 @@ class RunTableModel:
         self.__repetitions = repetitions
         self.__data_columns = data_columns
         self.__shuffle = shuffle
+        self.__experiment_run_table = None
 
     def get_factors(self) -> List[FactorModel]:
         return self.__factors
@@ -122,4 +123,5 @@ class RunTableModel:
         if self.__shuffle:
             random.shuffle(experiment_run_table)
 
+        self.experiment_run_table = experiment_run_table
         return experiment_run_table

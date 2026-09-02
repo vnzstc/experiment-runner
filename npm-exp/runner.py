@@ -73,7 +73,7 @@ class RunnerConfig:
         self.target_pkg_dir = f'{self.target_exp_dir}/pkgs'
         self.cmds = {
             'npm' : 'tar -xzf',
-            'xz' : 'xz -d'
+            'xz' : 'xz -dc'
         }
         self.target_run_dir = ''
 
@@ -160,15 +160,14 @@ class RunnerConfig:
         # @TODO: I would have liked to have the context here too.
         output.console_log("Config.before_run() called!")
 
+
+    def __cmd_builder(self, cmd, key, subject, output):
+        if key == 'xz':
+            return f"{cmd} npm-exp/pkgs/{subject} {output}output.tar" 
+
+        return f"{cmd} npm-exp/pkgs/{subject} {output}"
+
     def start_run(self, context: RunnerContext) -> None:
-        #for d in self.run_table_model.experiment_run_table:
-        #    print(basename(context.run_dir))
-        #    print(d['__run_id'])
-        #    if d['__run_id'] == basename(context.run_dir):
-        #        print(d)
-        #        print('found')
-        #        break
-        #print('not_found')
         # Create run result dir on the server
         self.target_run_dir = f'{self.target_res_dir}/{basename(context.run_dir)}'
         subject = next(
@@ -176,16 +175,20 @@ class RunnerConfig:
         )
 
         key, pkg = Path(subject).parts
+        # build command
         cmd_output = f'{self.target_run_dir}/decompressed/'
-        cmd = f'{self.cmds[key]} npm-exp/pkgs/{subject} -C {cmd_output}' 
-        # create run directory on the server
+        cmd = self.__cmd_builder(self.cmds[key], key, subject, cmd_output)
+        profile_cmd = f"sudo npm-exp/profile.sh {self.target_run_dir} {cmd}"
+
+        print('---CMD-CLIENT:  ', profile_cmd)
+        #
+        ## create run directory on the server
         self.proc.stdin.write(f"mkdir {self.target_run_dir}\n")
         self.proc.stdin.flush()
-        # create dir to store the output of the decompression
+        ## create dir to store the output of the decompression
         self.proc.stdin.write(f"mkdir {cmd_output}\n") 
         self.proc.stdin.flush()
-        # self.proc.stdin.write(f'sudo npm-exp/profile.sh {self.target_run_dir} sleep 2' + f'; echo __END__\n') 
-        self.proc.stdin.write(f'sudo npm-exp/profile.sh {self.target_run_dir} {cmd}' + f'; echo __END__\n')
+        self.proc.stdin.write(f'{profile_cmd}' + f'; echo __END__\n')
         self.proc.stdin.flush()
         res = []
         for line in self.proc.stdout:
@@ -204,13 +207,13 @@ class RunnerConfig:
     #    output.console_log("Config.stop_measurement() called!")
 
     def stop_run(self, context: RunnerContext) -> None:
-        local_path = f'{context.run_dir}/power.csv'
-        remote_path = f'{self.target_res_dir}/{basename(context.run_dir)}/power.csv'
+        #local_path = f'{context.run_dir}/power.csv'
+        #remote_path = f'{self.target_res_dir}/{basename(context.run_dir)}/power.csv'
 
-        cp_cmd = [
-            'scp', '-i', self.ssh_key_path, '-O', '-J', self.jump_address, f'{self.target_user}@{self.target_host}:{remote_path}', local_path
-        ]
-        subprocess.run(cp_cmd, check=True)
+        #cp_cmd = [
+        #    'scp', '-i', self.ssh_key_path, '-O', '-J', self.jump_address, f'{self.target_user}@{self.target_host}:{remote_path}', local_path
+        #]
+        #subprocess.run(cp_cmd, check=True)
         output.console_log("Config.stop_run() called!")
 
     def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, SupportsStr]]:
