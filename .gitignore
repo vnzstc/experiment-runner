@@ -23,5 +23,6 @@ pycharm-interpreter.sh
 python
 Session.vim
 Vagrantfile
-
+npm-exp/pkgs/npm
+npm-exp/pkgs/xz 
 __MACOSX/
