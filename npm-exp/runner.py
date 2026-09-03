@@ -17,6 +17,7 @@ import subprocess
 import shlex
 import time
 import uuid
+import re
 import csv
 
 class RunnerConfig:
@@ -97,11 +98,6 @@ class RunnerConfig:
             reader = csv.DictReader(f)
             return [row['name'] for row in reader]
 
-    #def _read_sample(self, alg_key: str) -> list[str]:
-    #    path = Path(f'samples/{alg_key}.csv')
-    #    sample = pd.read_csv(path)
-    #    return sample['name'].astype(str).to_list()
-
     def create_run_table_model(self) -> RunTableModel:
         # subjects_per_alg = {a: self._list_remote_subjects(a) for a in self.cmds.keys()}
         subjects_per_alg = {a: self._read_sample(a) for a in self.cmds.keys()} 
@@ -124,7 +120,7 @@ class RunnerConfig:
             factors=[alg, subjects],
             include_rows=include_rows_spec,
             shuffle=True,
-            data_columns=['avg_energy']
+            data_columns=['energy-pkg', 'energy-ram', 'execution-time']
         )
 
         return self.run_table_model
@@ -179,9 +175,7 @@ class RunnerConfig:
         cmd_output = f'{self.target_run_dir}/decompressed/'
         cmd = self.__cmd_builder(self.cmds[key], key, subject, cmd_output)
         profile_cmd = f"sudo npm-exp/profile.sh {self.target_run_dir} {cmd}"
-
         print('---CMD-CLIENT:  ', profile_cmd)
-        #
         ## create run directory on the server
         self.proc.stdin.write(f"mkdir {self.target_run_dir}\n")
         self.proc.stdin.flush()
@@ -207,18 +201,37 @@ class RunnerConfig:
     #    output.console_log("Config.stop_measurement() called!")
 
     def stop_run(self, context: RunnerContext) -> None:
-        #local_path = f'{context.run_dir}/power.csv'
-        #remote_path = f'{self.target_res_dir}/{basename(context.run_dir)}/power.csv'
+        local_path = f'{context.run_dir}/stat.txt'
+        remote_path = f'{self.target_res_dir}/{basename(context.run_dir)}/stat.txt'
 
-        #cp_cmd = [
-        #    'scp', '-i', self.ssh_key_path, '-O', '-J', self.jump_address, f'{self.target_user}@{self.target_host}:{remote_path}', local_path
-        #]
-        #subprocess.run(cp_cmd, check=True)
+        cp_cmd = [
+            'scp', '-i', self.ssh_key_path, '-O', '-J', self.jump_address, f'{self.target_user}@{self.target_host}:{remote_path}', local_path
+        ]
+        subprocess.run(cp_cmd, check=True)
         output.console_log("Config.stop_run() called!")
 
     def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, SupportsStr]]:
-        output.console_log("Config.populate_run_data() called!")
-        return None
+        filepath = f'{context.run_dir}/stat.txt'
+        print(filepath)
+        with open(filepath, 'r') as f:
+            content = f.read()
+            result = {
+                'energy-pkg': None, 'energy-ram': None, 'execution-time': None,
+            }
+
+            m = re.search(r'([\d.]+)\s+Joules\s+power/energy-pkg/', content)
+            if m:
+                result['energy-pkg'] = float(m.group(1))
+
+            m = re.search(r'([\d.]+)\s+Joules\s+power/energy-ram/', content)
+            if m:
+                result['energy-ram'] = float(m.group(1))
+
+            m = re.search(r'([\d.]+)\s+seconds time elapsed', content)
+            if m:
+                result['execution-time'] = float(m.group(1))
+
+        return result
 
     # This is where we close the SSH connection opened in before_experiment.
     def after_experiment(self) -> None:
