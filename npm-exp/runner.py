@@ -53,7 +53,7 @@ class RunnerConfig:
         """Executes immediately after program start, on config load"""
         EventSubscriptionController.subscribe_to_multiple_events([
             (RunnerEvents.BEFORE_EXPERIMENT, self.before_experiment),
-            (RunnerEvents.BEFORE_RUN       , self.before_run       ),
+            #(RunnerEvents.BEFORE_RUN       , self.before_run       ),
             (RunnerEvents.START_RUN        , self.start_run        ),
             #(RunnerEvents.START_MEASUREMENT, self.start_measurement),
             #(RunnerEvents.INTERACT         , self.interact         ),
@@ -73,11 +73,13 @@ class RunnerConfig:
         self.target_res_dir = f'{self.target_exp_dir}/results'
         self.target_pkg_dir = f'{self.target_exp_dir}/pkgs'
         self.cmds = {
-            'npm' : 'tar -xzf',
-            'xz' : 'xz -dc'
+            'npm': 'tar -xzf', # baseline
+            'xz': 'xz -dc',
+            'zopfli': 'gzip -dc',
+            'zstd': 'zstd -d',
+            'brotli': 'brotli -d'
         }
         self.target_run_dir = ''
-
         output.console_log("Custom config loaded")
 
     def _list_remote_subjects(self, alg_key: str) -> list[str]:
@@ -120,6 +122,7 @@ class RunnerConfig:
             factors=[alg, subjects],
             include_rows=include_rows_spec,
             shuffle=True,
+            repetitions = 15,
             data_columns=['energy-pkg', 'energy-ram', 'execution-time']
         )
 
@@ -152,9 +155,9 @@ class RunnerConfig:
         self.proc.stdin.flush()
         output.console_log("Before Experiment")
 
-    def before_run(self) -> None:
-        # @TODO: I would have liked to have the context here too.
-        output.console_log("Config.before_run() called!")
+    #def before_run(self) -> None:
+    #    # @TODO: I would have liked to have the context here too.
+    #    output.console_log("Config.before_run() called!")
 
 
     def __cmd_builder(self, cmd, key, subject, output):
