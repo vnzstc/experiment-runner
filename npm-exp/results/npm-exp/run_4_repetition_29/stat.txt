@@ -1,0 +1,11 @@
+# started on Fri Sep  4 10:19:10 2026
+
+
+ Performance counter stats for 'system wide':
+
+             70.33 Joules power/energy-pkg/                                                     
+              8.41 Joules power/energy-ram/                                                     
+
+       1.100873526 seconds time elapsed
+
+tar -xzf npm-exp/pkgs/npm/@next__swc-darwin-x64--swc-darwin-x64-16.2.6.tgz -C npm-exp/results/run_4_repetition_29/decompressed/

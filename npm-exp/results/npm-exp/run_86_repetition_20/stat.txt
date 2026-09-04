@@ -1,0 +1,11 @@
+# started on Fri Sep  4 10:26:59 2026
+
+
+ Performance counter stats for 'system wide':
+
+             41.00 Joules power/energy-pkg/                                                     
+              4.98 Joules power/energy-ram/                                                     
+
+       0.639381474 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@next__swc-darwin-x64--swc-darwin-x64-16.2.6.tar.br > npm-exp/results/run_86_repetition_20/decompressed/output.tar

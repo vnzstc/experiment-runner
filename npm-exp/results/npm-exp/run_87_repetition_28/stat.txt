@@ -1,0 +1,11 @@
+# started on Fri Sep  4 08:48:42 2026
+
+
+ Performance counter stats for 'system wide':
+
+              6.04 Joules power/energy-pkg/                                                     
+              0.74 Joules power/energy-ram/                                                     
+
+       0.094187164 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@esbuild__freebsd-x64--freebsd-x64-0.28.0.tar.br > npm-exp/results/run_87_repetition_28/decompressed/output.tar

@@ -1,0 +1,11 @@
+# started on Fri Sep  4 11:15:58 2026
+
+
+ Performance counter stats for 'system wide':
+
+              3.44 Joules power/energy-pkg/                                                     
+              0.41 Joules power/energy-ram/                                                     
+
+       0.050968315 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@esbuild__darwin-x64--darwin-x64-0.28.0.tar.zst -o npm-exp/results/run_74_repetition_2/decompressed/output.tar

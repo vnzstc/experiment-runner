@@ -1,0 +1,11 @@
+# started on Fri Sep  4 09:45:48 2026
+
+
+ Performance counter stats for 'system wide':
+
+            173.97 Joules power/energy-pkg/                                                     
+             20.94 Joules power/energy-ram/                                                     
+
+       2.729252381 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/@next__swc-win32-x64-msvc--swc-win32-x64-msvc-16.2.6.tar.xz > npm-exp/results/run_27_repetition_20/decompressed/output.taroutput.tar

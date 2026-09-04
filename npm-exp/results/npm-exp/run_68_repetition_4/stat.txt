@@ -1,0 +1,11 @@
+# started on Fri Sep  4 09:10:51 2026
+
+
+ Performance counter stats for 'system wide':
+
+             21.33 Joules power/energy-pkg/                                                     
+              2.54 Joules power/energy-ram/                                                     
+
+       0.323532703 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@next__swc-win32-ia32-msvc--swc-win32-ia32-msvc-14.2.16.tar.zst -o npm-exp/results/run_68_repetition_4/decompressed/output.tar

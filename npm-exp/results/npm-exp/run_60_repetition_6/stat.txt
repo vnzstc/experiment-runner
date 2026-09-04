@@ -1,0 +1,11 @@
+# started on Fri Sep  4 10:41:07 2026
+
+
+ Performance counter stats for 'system wide':
+
+              7.83 Joules power/energy-pkg/                                                     
+              0.95 Joules power/energy-ram/                                                     
+
+       0.123492020 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/@esbuild__linux-s390x--linux-s390x-0.28.0.tgz > npm-exp/results/run_60_repetition_6/decompressed/output.tar

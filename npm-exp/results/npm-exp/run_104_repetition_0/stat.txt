@@ -1,0 +1,11 @@
+# started on Fri Sep  4 10:59:24 2026
+
+
+ Performance counter stats for 'system wide':
+
+              5.72 Joules power/energy-pkg/                                                     
+              0.68 Joules power/energy-ram/                                                     
+
+       0.088604166 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@esbuild__linux-ia32--linux-ia32-0.28.0.tar.br > npm-exp/results/run_104_repetition_0/decompressed/output.tar
