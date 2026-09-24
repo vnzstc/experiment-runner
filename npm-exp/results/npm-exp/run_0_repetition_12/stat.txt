@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:48:17 2026
+# started on Sat Sep 19 20:09:20 2026
 
 
  Performance counter stats for 'system wide':
 
-             70.58 Joules power/energy-pkg/                                                     
-              8.41 Joules power/energy-ram/                                                     
+              0.33 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       1.091851171 seconds time elapsed
+       0.004594091 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@next__swc-darwin-arm64--swc-darwin-arm64-16.2.6.tgz -C npm-exp/results/run_0_repetition_12/decompressed/
+tar -xzf npm-exp/pkgs/npm/watchpack-chokidar2--watchpack-chokidar2-2.0.1.tgz -C npm-exp/results/run_0_repetition_12/decompressed/

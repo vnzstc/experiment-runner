@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:49:47 2026
+# started on Fri Sep 18 15:06:45 2026
 
 
  Performance counter stats for 'system wide':
 
-             23.21 Joules power/energy-pkg/                                                     
-              2.75 Joules power/energy-ram/                                                     
+              1.67 Joules power/energy-pkg/                                                     
+              0.19 Joules power/energy-ram/                                                     
 
-       0.363705273 seconds time elapsed
+       0.025398560 seconds time elapsed
 
-xz -dc npm-exp/pkgs/xz/@esbuild__win32-x64--win32-x64-0.28.0.tar.xz > npm-exp/results/run_36_repetition_21/decompressed/output.taroutput.tar
+tar -xzf npm-exp/pkgs/npm/lodash-es--lodash-es-4.18.1.tgz -C npm-exp/results/run_36_repetition_21/decompressed/

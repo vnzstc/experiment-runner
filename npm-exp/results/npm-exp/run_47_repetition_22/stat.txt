@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:01:09 2026
+# started on Fri Sep 18 17:01:48 2026
 
 
  Performance counter stats for 'system wide':
 
-             81.39 Joules power/energy-pkg/                                                     
-              9.76 Joules power/energy-ram/                                                     
+              1.90 Joules power/energy-pkg/                                                     
+              0.22 Joules power/energy-ram/                                                     
 
-       1.281168321 seconds time elapsed
+       0.029171809 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/next--next-16.2.6.tgz > npm-exp/results/run_47_repetition_22/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/protobufjs--protobufjs-8.4.2.tgz -C npm-exp/results/run_47_repetition_22/decompressed/

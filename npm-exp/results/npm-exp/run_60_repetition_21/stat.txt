@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:27:37 2026
+# started on Fri Sep 18 15:57:03 2026
 
 
  Performance counter stats for 'system wide':
 
-              8.03 Joules power/energy-pkg/                                                     
-              0.96 Joules power/energy-ram/                                                     
+             37.41 Joules power/energy-pkg/                                                     
+              4.45 Joules power/energy-ram/                                                     
 
-       0.126045754 seconds time elapsed
+       0.585546549 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@esbuild__linux-s390x--linux-s390x-0.28.0.tgz > npm-exp/results/run_60_repetition_21/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/aws-sdk--aws-sdk-2.1693.0.tgz -C npm-exp/results/run_60_repetition_21/decompressed/

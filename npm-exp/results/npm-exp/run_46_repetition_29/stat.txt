@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:50:57 2026
+# started on Sat Sep 19 20:47:01 2026
 
 
  Performance counter stats for 'system wide':
 
-             73.61 Joules power/energy-pkg/                                                     
-              8.87 Joules power/energy-ram/                                                     
+              2.25 Joules power/energy-pkg/                                                     
+              0.25 Joules power/energy-ram/                                                     
 
-       1.158364041 seconds time elapsed
+       0.034229427 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@next__swc-darwin-x64--swc-darwin-x64-16.2.6.tgz > npm-exp/results/run_46_repetition_29/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/@modelcontextprotocol__sdk--sdk-1.29.0.tgz -C npm-exp/results/run_46_repetition_29/decompressed/

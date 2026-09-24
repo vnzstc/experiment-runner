@@ -1,0 +1,11 @@
+# started on Sat Sep 19 20:31:09 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.63 Joules power/energy-pkg/                                                     
+              0.19 Joules power/energy-ram/                                                     
+
+       0.025036826 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@opentelemetry__semantic-conventions--semantic-conventions-1.41.1.tar.br > npm-exp/results/run_259_repetition_7/decompressed/output.tar

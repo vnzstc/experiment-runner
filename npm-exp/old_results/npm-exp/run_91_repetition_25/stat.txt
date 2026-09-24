@@ -1,0 +1,11 @@
+# started on Fri Sep  4 10:40:11 2026
+
+
+ Performance counter stats for 'system wide':
+
+             12.93 Joules power/energy-pkg/                                                     
+              1.60 Joules power/energy-ram/                                                     
+
+       0.200361310 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/aws-sdk--aws-sdk-2.1693.0.tar.br > npm-exp/results/run_91_repetition_25/decompressed/output.tar

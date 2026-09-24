@@ -1,0 +1,11 @@
+# started on Sat Sep 19 19:30:42 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004080219 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/shallowequal--shallowequal-1.1.0.tar.xz > npm-exp/results/run_111_repetition_6/decompressed/output.taroutput.tar

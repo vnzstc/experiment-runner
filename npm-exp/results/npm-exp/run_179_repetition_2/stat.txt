@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:30:28 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.71 Joules power/energy-pkg/                                                     
+              0.08 Joules power/energy-ram/                                                     
+
+       0.010298606 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/tailwindcss--tailwindcss-4.3.0.tgz > npm-exp/results/run_179_repetition_2/decompressed/output.tar

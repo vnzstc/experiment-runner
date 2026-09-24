@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:35:05 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.29 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.004092267 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/watchpack-chokidar2--watchpack-chokidar2-2.0.1.tar.br > npm-exp/results/run_309_repetition_26/decompressed/output.tar

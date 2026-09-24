@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:09:23 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.94 Joules power/energy-pkg/                                                     
+              0.24 Joules power/energy-ram/                                                     
+
+       0.030104245 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/libphonenumber-js--libphonenumber-js-1.13.3.tar.br > npm-exp/results/run_286_repetition_27/decompressed/output.tar

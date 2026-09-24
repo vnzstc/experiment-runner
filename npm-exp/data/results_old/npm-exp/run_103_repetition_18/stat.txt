@@ -1,0 +1,11 @@
+# started on Fri Sep  4 11:41:02 2026
+
+
+ Performance counter stats for 'system wide':
+
+              6.36 Joules power/energy-pkg/                                                     
+              0.78 Joules power/energy-ram/                                                     
+
+       0.099144267 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@esbuild__sunos-x64--sunos-x64-0.28.0.tar.br > npm-exp/results/run_103_repetition_18/decompressed/output.tar

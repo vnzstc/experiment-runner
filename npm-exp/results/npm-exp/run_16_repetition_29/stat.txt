@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:38:13 2026
+# started on Sat Sep 19 20:55:06 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.74 Joules power/energy-pkg/                                                     
-              0.92 Joules power/energy-ram/                                                     
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       0.120745130 seconds time elapsed
+       0.004809535 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@esbuild__linux-x64--linux-x64-0.28.0.tgz -C npm-exp/results/run_16_repetition_29/decompressed/
+tar -xzf npm-exp/pkgs/npm/eslint-config-react-app--eslint-config-react-app-7.0.1.tgz -C npm-exp/results/run_16_repetition_29/decompressed/

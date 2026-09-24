@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:30:01 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.004486178 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/dom-accessibility-api--dom-accessibility-api-0.7.1.tar.zst -o npm-exp/results/run_210_repetition_17/decompressed/output.tar

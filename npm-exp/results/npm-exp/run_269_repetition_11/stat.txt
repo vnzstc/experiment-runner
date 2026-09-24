@@ -1,0 +1,11 @@
+# started on Fri Sep 18 19:16:33 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.004289396 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/babel-plugin-check-es2015-constants--babel-plugin-check-es2015-constants-6.22.0.tar.br > npm-exp/results/run_269_repetition_11/decompressed/output.tar

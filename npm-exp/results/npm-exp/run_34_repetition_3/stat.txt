@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:35:19 2026
+# started on Sat Sep 19 18:27:58 2026
 
 
  Performance counter stats for 'system wide':
 
-             23.44 Joules power/energy-pkg/                                                     
-              2.82 Joules power/energy-ram/                                                     
+              0.54 Joules power/energy-pkg/                                                     
+              0.07 Joules power/energy-ram/                                                     
 
-       0.366825513 seconds time elapsed
+       0.008127592 seconds time elapsed
 
-xz -dc npm-exp/pkgs/xz/@esbuild__freebsd-x64--freebsd-x64-0.28.0.tar.xz > npm-exp/results/run_34_repetition_3/decompressed/output.taroutput.tar
+tar -xzf npm-exp/pkgs/npm/react-error-overlay--react-error-overlay-6.1.0.tgz -C npm-exp/results/run_34_repetition_3/decompressed/

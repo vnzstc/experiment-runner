@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:07:33 2026
+# started on Fri Sep 18 17:19:24 2026
 
 
  Performance counter stats for 'system wide':
 
-              5.95 Joules power/energy-pkg/                                                     
-              0.71 Joules power/energy-ram/                                                     
+             73.14 Joules power/energy-pkg/                                                     
+              8.74 Joules power/energy-ram/                                                     
 
-       0.092894998 seconds time elapsed
+       1.147323709 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@esbuild__openbsd-x64--openbsd-x64-0.28.0.tar.br > npm-exp/results/run_100_repetition_3/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/next--next-16.2.6.tar.xz > npm-exp/results/run_100_repetition_3/decompressed/output.taroutput.tar

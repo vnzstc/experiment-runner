@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:23:47 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.48 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
+
+       0.007437929 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/iconv-lite--iconv-lite-0.7.2.tar.br > npm-exp/results/run_283_repetition_27/decompressed/output.tar

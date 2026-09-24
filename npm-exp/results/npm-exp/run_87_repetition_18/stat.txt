@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:04:44 2026
+# started on Sat Sep 19 17:57:30 2026
 
 
  Performance counter stats for 'system wide':
 
-              5.94 Joules power/energy-pkg/                                                     
-              0.71 Joules power/energy-ram/                                                     
+              2.02 Joules power/energy-pkg/                                                     
+              0.24 Joules power/energy-ram/                                                     
 
-       0.092958699 seconds time elapsed
+       0.031264674 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@esbuild__freebsd-x64--freebsd-x64-0.28.0.tar.br > npm-exp/results/run_87_repetition_18/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/eslint-plugin-import--eslint-plugin-import-2.32.0.tar.xz > npm-exp/results/run_87_repetition_18/decompressed/output.taroutput.tar

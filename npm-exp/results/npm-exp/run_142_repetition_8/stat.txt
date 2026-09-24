@@ -1,0 +1,11 @@
+# started on Sat Sep 19 20:49:14 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.20 Joules power/energy-pkg/                                                     
+              0.02 Joules power/energy-ram/                                                     
+
+       0.003447980 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/babel-helper-get-function-arity--babel-helper-get-function-arity-6.24.1.tgz > npm-exp/results/run_142_repetition_8/decompressed/output.tar

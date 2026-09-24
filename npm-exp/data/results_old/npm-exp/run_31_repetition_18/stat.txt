@@ -1,0 +1,11 @@
+# started on Fri Sep  4 09:53:25 2026
+
+
+ Performance counter stats for 'system wide':
+
+             23.12 Joules power/energy-pkg/                                                     
+              2.78 Joules power/energy-ram/                                                     
+
+       0.360912647 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/@esbuild__openbsd-x64--openbsd-x64-0.28.0.tar.xz > npm-exp/results/run_31_repetition_18/decompressed/output.taroutput.tar

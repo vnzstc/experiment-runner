@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:45:26 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.36 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.005265605 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@vue__reactivity--reactivity-3.5.34.tar.br > npm-exp/results/run_265_repetition_2/decompressed/output.tar

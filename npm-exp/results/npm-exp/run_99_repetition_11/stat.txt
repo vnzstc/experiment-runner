@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:08:31 2026
+# started on Fri Sep 18 19:00:47 2026
 
 
  Performance counter stats for 'system wide':
 
-             30.10 Joules power/energy-pkg/                                                     
-              3.67 Joules power/energy-ram/                                                     
+              1.02 Joules power/energy-pkg/                                                     
+              0.12 Joules power/energy-ram/                                                     
 
-       0.471049986 seconds time elapsed
+       0.015856975 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@next__swc-win32-ia32-msvc--swc-win32-ia32-msvc-14.2.16.tar.br > npm-exp/results/run_99_repetition_11/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/lodash-es--lodash-es-4.18.1.tar.xz > npm-exp/results/run_99_repetition_11/decompressed/output.taroutput.tar

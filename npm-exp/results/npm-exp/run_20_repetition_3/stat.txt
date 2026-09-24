@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:04:35 2026
+# started on Fri Sep 18 17:03:03 2026
 
 
  Performance counter stats for 'system wide':
 
-             37.60 Joules power/energy-pkg/                                                     
-              4.49 Joules power/energy-ram/                                                     
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       0.583452169 seconds time elapsed
+       0.004957370 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/aws-sdk--aws-sdk-2.1693.0.tgz -C npm-exp/results/run_20_repetition_3/decompressed/
+tar -xzf npm-exp/pkgs/npm/linkify-it--linkify-it-5.0.1.tgz -C npm-exp/results/run_20_repetition_3/decompressed/

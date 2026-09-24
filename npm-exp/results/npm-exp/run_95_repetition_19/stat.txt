@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:41:14 2026
+# started on Fri Sep 18 16:16:22 2026
 
 
  Performance counter stats for 'system wide':
 
-              6.19 Joules power/energy-pkg/                                                     
-              0.75 Joules power/energy-ram/                                                     
+              0.77 Joules power/energy-pkg/                                                     
+              0.09 Joules power/energy-ram/                                                     
 
-       0.096535874 seconds time elapsed
+       0.011657335 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@esbuild__win32-ia32--win32-ia32-0.28.0.tar.br > npm-exp/results/run_95_repetition_19/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/immer--immer-11.1.8.tar.xz > npm-exp/results/run_95_repetition_19/decompressed/output.taroutput.tar

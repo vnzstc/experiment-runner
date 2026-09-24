@@ -1,0 +1,11 @@
+# started on Sat Sep 19 20:51:40 2026
+
+
+ Performance counter stats for 'system wide':
+
+             38.38 Joules power/energy-pkg/                                                     
+              4.55 Joules power/energy-ram/                                                     
+
+       0.605725031 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/aws-sdk--aws-sdk-2.1693.0.tgz > npm-exp/results/run_141_repetition_12/decompressed/output.tar

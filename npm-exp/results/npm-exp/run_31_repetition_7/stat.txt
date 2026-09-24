@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:05:58 2026
+# started on Fri Sep 18 17:06:02 2026
 
 
  Performance counter stats for 'system wide':
 
-             22.95 Joules power/energy-pkg/                                                     
-              2.75 Joules power/energy-ram/                                                     
+              0.45 Joules power/energy-pkg/                                                     
+              0.05 Joules power/energy-ram/                                                     
 
-       0.360538453 seconds time elapsed
+       0.007097117 seconds time elapsed
 
-xz -dc npm-exp/pkgs/xz/@esbuild__openbsd-x64--openbsd-x64-0.28.0.tar.xz > npm-exp/results/run_31_repetition_7/decompressed/output.taroutput.tar
+tar -xzf npm-exp/pkgs/npm/dom-accessibility-api--dom-accessibility-api-0.7.1.tgz -C npm-exp/results/run_31_repetition_7/decompressed/

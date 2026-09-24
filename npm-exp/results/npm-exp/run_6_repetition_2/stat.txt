@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:43:50 2026
+# started on Sat Sep 19 19:54:29 2026
 
 
  Performance counter stats for 'system wide':
 
-             79.75 Joules power/energy-pkg/                                                     
-              9.55 Joules power/energy-ram/                                                     
+              0.33 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       1.236543725 seconds time elapsed
+       0.004733227 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/next--next-16.2.6.tgz -C npm-exp/results/run_6_repetition_2/decompressed/
+tar -xzf npm-exp/pkgs/npm/babel-plugin-check-es2015-constants--babel-plugin-check-es2015-constants-6.22.0.tgz -C npm-exp/results/run_6_repetition_2/decompressed/

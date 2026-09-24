@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:32:10 2026
+# started on Fri Sep 18 16:47:36 2026
 
 
  Performance counter stats for 'system wide':
 
-              3.26 Joules power/energy-pkg/                                                     
-              0.39 Joules power/energy-ram/                                                     
+              3.04 Joules power/energy-pkg/                                                     
+              0.35 Joules power/energy-ram/                                                     
 
-       0.049403671 seconds time elapsed
+       0.047073534 seconds time elapsed
 
-zstd -d npm-exp/pkgs/zstd/@esbuild__win32-x64--win32-x64-0.28.0.tar.zst -o npm-exp/results/run_70_repetition_17/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/@opentelemetry__semantic-conventions--semantic-conventions-1.41.1.tar.xz > npm-exp/results/run_70_repetition_17/decompressed/output.taroutput.tar

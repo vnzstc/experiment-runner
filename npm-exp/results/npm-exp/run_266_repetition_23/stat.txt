@@ -1,0 +1,11 @@
+# started on Fri Sep 18 18:09:51 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004461999 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/assert-plus--assert-plus-1.0.0.tar.br > npm-exp/results/run_266_repetition_23/decompressed/output.tar

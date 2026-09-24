@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:41:18 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.35 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.004795635 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/resize-observer-polyfill--resize-observer-polyfill-1.5.1.tar.br > npm-exp/results/run_299_repetition_2/decompressed/output.tar

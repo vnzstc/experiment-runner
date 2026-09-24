@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:43:18 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.93 Joules power/energy-pkg/                                                     
+              0.23 Joules power/energy-ram/                                                     
+
+       0.030176636 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/protobufjs--protobufjs-8.4.2.tgz > npm-exp/results/run_169_repetition_3/decompressed/output.tar

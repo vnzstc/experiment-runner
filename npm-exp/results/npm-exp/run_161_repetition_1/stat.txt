@@ -1,0 +1,11 @@
+# started on Fri Sep 18 17:49:47 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.25 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004131292 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/linkify-it--linkify-it-5.0.1.tgz > npm-exp/results/run_161_repetition_1/decompressed/output.tar

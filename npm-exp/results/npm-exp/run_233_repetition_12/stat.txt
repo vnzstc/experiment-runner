@@ -1,0 +1,11 @@
+# started on Fri Sep 18 18:30:39 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.15 Joules power/energy-pkg/                                                     
+              0.14 Joules power/energy-ram/                                                     
+
+       0.017703023 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/react-dom--react-dom-19.2.6.tar.zst -o npm-exp/results/run_233_repetition_12/decompressed/output.tar

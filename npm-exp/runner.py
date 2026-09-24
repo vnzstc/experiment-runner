@@ -26,7 +26,7 @@ class RunnerConfig:
     name:                       str             = "npm-exp"
     results_output_path:        Path            = ROOT_DIR / 'results'
     operation_type:             OperationType   = OperationType.AUTO
-    time_between_runs_in_ms:    int             = 1000 # cool down between runs
+    time_between_runs_in_ms:    int             = 2000 # cool down between runs
     rapl_overflow_value                         = 262143.328850
 
     # ================================ SSH CONNECTION SETTINGS ================================
@@ -77,7 +77,7 @@ class RunnerConfig:
             'xz': 'xz -dc',
             'zopfli': 'gzip -dc',
             'zstd': 'zstd -d',
-            'brotli': 'brotli -d'
+            'brotli': 'brotli -dc'
         }
         self.target_run_dir = ''
         output.console_log("Custom config loaded")
@@ -122,7 +122,7 @@ class RunnerConfig:
             factors=[alg, subjects],
             include_rows=include_rows_spec,
             shuffle=True,
-            repetitions = 15,
+            repetitions = 30,
             data_columns=['energy-pkg', 'energy-ram', 'execution-time']
         )
 

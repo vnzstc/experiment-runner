@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:30:09 2026
+# started on Fri Sep 18 16:39:18 2026
 
 
  Performance counter stats for 'system wide':
 
-             43.87 Joules power/energy-pkg/                                                     
-              5.38 Joules power/energy-ram/                                                     
+              6.66 Joules power/energy-pkg/                                                     
+              0.80 Joules power/energy-ram/                                                     
 
-       0.684203371 seconds time elapsed
+       0.104944425 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@next__swc-linux-x64-gnu--swc-linux-x64-gnu-16.2.6.tar.br > npm-exp/results/run_88_repetition_13/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/ethers--ethers-6.16.0.tar.xz > npm-exp/results/run_88_repetition_13/decompressed/output.taroutput.tar

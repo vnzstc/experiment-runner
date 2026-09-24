@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:49:18 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.19 Joules power/energy-pkg/                                                     
+              0.02 Joules power/energy-ram/                                                     
+
+       0.003459866 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/babel-plugin-check-es2015-constants--babel-plugin-check-es2015-constants-6.22.0.tgz > npm-exp/results/run_143_repetition_28/decompressed/output.tar

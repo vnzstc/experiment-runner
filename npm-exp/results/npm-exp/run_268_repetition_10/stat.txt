@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:59:55 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.003939590 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/babel-helper-get-function-arity--babel-helper-get-function-arity-6.24.1.tar.br > npm-exp/results/run_268_repetition_10/decompressed/output.tar

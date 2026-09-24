@@ -1,0 +1,11 @@
+# started on Sat Sep 19 19:09:59 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.14 Joules power/energy-pkg/                                                     
+              0.14 Joules power/energy-ram/                                                     
+
+       0.018370196 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/jiti--jiti-2.7.0.tgz > npm-exp/results/run_159_repetition_18/decompressed/output.tar

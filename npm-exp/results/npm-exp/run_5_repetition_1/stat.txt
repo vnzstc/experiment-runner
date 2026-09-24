@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:35:53 2026
+# started on Fri Sep 18 17:49:53 2026
 
 
  Performance counter stats for 'system wide':
 
-              8.15 Joules power/energy-pkg/                                                     
-              0.99 Joules power/energy-ram/                                                     
+              0.33 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       0.126810213 seconds time elapsed
+       0.004520405 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@esbuild__aix-ppc64--aix-ppc64-0.28.0.tgz -C npm-exp/results/run_5_repetition_1/decompressed/
+tar -xzf npm-exp/pkgs/npm/babel-plugin-transform-exponentiation-operator--babel-plugin-transform-exponentiation-operator-6.24.1.tgz -C npm-exp/results/run_5_repetition_1/decompressed/

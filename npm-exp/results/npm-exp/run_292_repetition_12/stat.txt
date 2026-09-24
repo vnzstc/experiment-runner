@@ -1,0 +1,11 @@
+# started on Sat Sep 19 21:10:38 2026
+
+
+ Performance counter stats for 'system wide':
+
+              2.12 Joules power/energy-pkg/                                                     
+              0.25 Joules power/energy-ram/                                                     
+
+       0.033531009 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/prettier--prettier-3.8.3.tar.br > npm-exp/results/run_292_repetition_12/decompressed/output.tar

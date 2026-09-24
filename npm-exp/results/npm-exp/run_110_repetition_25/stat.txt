@@ -1,0 +1,11 @@
+# started on Sat Sep 19 20:20:15 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.005592903 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/resize-observer-polyfill--resize-observer-polyfill-1.5.1.tar.xz > npm-exp/results/run_110_repetition_25/decompressed/output.taroutput.tar

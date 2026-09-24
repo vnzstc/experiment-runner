@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:11:16 2026
+# started on Sat Sep 19 20:09:44 2026
 
 
  Performance counter stats for 'system wide':
 
-             21.55 Joules power/energy-pkg/                                                     
-              2.63 Joules power/energy-ram/                                                     
+              0.39 Joules power/energy-pkg/                                                     
+              0.05 Joules power/energy-ram/                                                     
 
-       0.338311435 seconds time elapsed
+       0.005872413 seconds time elapsed
 
-xz -dc npm-exp/pkgs/xz/@esbuild__linux-riscv64--linux-riscv64-0.28.0.tar.xz > npm-exp/results/run_26_repetition_29/decompressed/output.taroutput.tar
+tar -xzf npm-exp/pkgs/npm/workbox-streams--workbox-streams-7.4.1.tgz -C npm-exp/results/run_26_repetition_29/decompressed/

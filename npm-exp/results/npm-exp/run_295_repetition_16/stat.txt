@@ -1,0 +1,11 @@
+# started on Fri Sep 18 15:31:21 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.87 Joules power/energy-pkg/                                                     
+              0.11 Joules power/energy-ram/                                                     
+
+       0.012985603 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/protobufjs--protobufjs-8.4.2.tar.br > npm-exp/results/run_295_repetition_16/decompressed/output.tar

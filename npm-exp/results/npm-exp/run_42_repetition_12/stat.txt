@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:10:44 2026
+# started on Fri Sep 18 15:56:52 2026
 
 
  Performance counter stats for 'system wide':
 
-             71.15 Joules power/energy-pkg/                                                     
-              8.48 Joules power/energy-ram/                                                     
+              1.11 Joules power/energy-pkg/                                                     
+              0.13 Joules power/energy-ram/                                                     
 
-       1.119235454 seconds time elapsed
+       0.017157131 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@next__swc-darwin-arm64--swc-darwin-arm64-16.2.6.tgz > npm-exp/results/run_42_repetition_12/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/eslint-plugin-import--eslint-plugin-import-2.32.0.tgz -C npm-exp/results/run_42_repetition_12/decompressed/

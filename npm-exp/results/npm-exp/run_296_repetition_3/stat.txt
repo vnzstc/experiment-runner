@@ -1,0 +1,11 @@
+# started on Fri Sep 18 18:24:59 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.18 Joules power/energy-pkg/                                                     
+              0.14 Joules power/energy-ram/                                                     
+
+       0.018654275 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/react-dom--react-dom-19.2.6.tar.br > npm-exp/results/run_296_repetition_3/decompressed/output.tar

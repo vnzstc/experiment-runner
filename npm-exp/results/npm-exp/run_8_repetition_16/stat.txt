@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:36:21 2026
+# started on Fri Sep 18 15:51:20 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.67 Joules power/energy-pkg/                                                     
-              0.91 Joules power/energy-ram/                                                     
+              0.35 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       0.120169293 seconds time elapsed
+       0.004808288 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@esbuild__sunos-x64--sunos-x64-0.28.0.tgz -C npm-exp/results/run_8_repetition_16/decompressed/
+tar -xzf npm-exp/pkgs/npm/@babel__plugin-transform-regexp-modifiers--plugin-transform-regexp-modifiers-7.28.6.tgz -C npm-exp/results/run_8_repetition_16/decompressed/

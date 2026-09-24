@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:47:27 2026
+# started on Sat Sep 19 20:35:26 2026
 
 
  Performance counter stats for 'system wide':
 
-             78.07 Joules power/energy-pkg/                                                     
-              9.31 Joules power/energy-ram/                                                     
+              3.59 Joules power/energy-pkg/                                                     
+              0.41 Joules power/energy-ram/                                                     
 
-       1.229610198 seconds time elapsed
+       0.054843720 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@next__swc-linux-x64-gnu--swc-linux-x64-gnu-16.2.6.tgz > npm-exp/results/run_51_repetition_7/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/webpack--webpack-5.107.1.tgz -C npm-exp/results/run_51_repetition_7/decompressed/

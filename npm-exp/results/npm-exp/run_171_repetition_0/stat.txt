@@ -1,0 +1,11 @@
+# started on Sat Sep 19 19:00:41 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.48 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
+
+       0.007346559 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/react-error-overlay--react-error-overlay-6.1.0.tgz > npm-exp/results/run_171_repetition_0/decompressed/output.tar

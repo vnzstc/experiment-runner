@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:13:11 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.51 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
+
+       0.008188136 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/workbox-routing--workbox-routing-7.4.1.tar.xz > npm-exp/results/run_123_repetition_12/decompressed/output.taroutput.tar

@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:07:55 2026
+
+
+ Performance counter stats for 'system wide':
+
+             13.56 Joules power/energy-pkg/                                                     
+              1.59 Joules power/energy-ram/                                                     
+
+       0.211686229 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/typescript--typescript-6.0.3.tar.xz > npm-exp/results/run_119_repetition_7/decompressed/output.taroutput.tar

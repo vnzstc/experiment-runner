@@ -1,0 +1,11 @@
+# started on Sat Sep 19 19:14:54 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.98 Joules power/energy-pkg/                                                     
+              0.12 Joules power/energy-ram/                                                     
+
+       0.014659597 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@modelcontextprotocol__sdk--sdk-1.29.0.tar.zst -o npm-exp/results/run_194_repetition_27/decompressed/output.tar

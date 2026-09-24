@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:17:30 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.52 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
+
+       0.007539288 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@aws-cdk__cloud-assembly-schema--cloud-assembly-schema-53.27.0.tar.br > npm-exp/results/run_252_repetition_13/decompressed/output.tar

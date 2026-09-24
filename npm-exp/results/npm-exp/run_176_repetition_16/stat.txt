@@ -1,0 +1,11 @@
+# started on Fri Sep 18 18:20:56 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.25 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.003758049 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/split2--split2-4.2.0.tgz > npm-exp/results/run_176_repetition_16/decompressed/output.tar

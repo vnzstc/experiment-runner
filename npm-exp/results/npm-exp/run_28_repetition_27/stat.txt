@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:36:38 2026
+# started on Fri Sep 18 16:48:06 2026
 
 
  Performance counter stats for 'system wide':
 
-            157.13 Joules power/energy-pkg/                                                     
-             18.63 Joules power/energy-ram/                                                     
+              0.38 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       2.452279684 seconds time elapsed
+       0.005928404 seconds time elapsed
 
-xz -dc npm-exp/pkgs/xz/@next__swc-linux-arm64-gnu--swc-linux-arm64-gnu-16.2.6.tar.xz > npm-exp/results/run_28_repetition_27/decompressed/output.taroutput.tar
+tar -xzf npm-exp/pkgs/npm/resize-observer-polyfill--resize-observer-polyfill-1.5.1.tgz -C npm-exp/results/run_28_repetition_27/decompressed/

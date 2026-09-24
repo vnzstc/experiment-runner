@@ -1,0 +1,11 @@
+# started on Sat Sep 19 19:25:01 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.90 Joules power/energy-pkg/                                                     
+              0.10 Joules power/energy-ram/                                                     
+
+       0.013678277 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/tailwindcss--tailwindcss-4.3.0.tar.xz > npm-exp/results/run_116_repetition_24/decompressed/output.taroutput.tar

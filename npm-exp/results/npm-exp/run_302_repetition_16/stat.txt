@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:39:45 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004242233 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/split2--split2-4.2.0.tar.br > npm-exp/results/run_302_repetition_16/decompressed/output.tar

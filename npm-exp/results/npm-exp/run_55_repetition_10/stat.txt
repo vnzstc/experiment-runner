@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:05:37 2026
+# started on Sat Sep 19 19:50:54 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.97 Joules power/energy-pkg/                                                     
-              0.95 Joules power/energy-ram/                                                     
+              4.80 Joules power/energy-pkg/                                                     
+              0.58 Joules power/energy-ram/                                                     
 
-       0.125378790 seconds time elapsed
+       0.074755542 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@esbuild__openbsd-x64--openbsd-x64-0.28.0.tgz > npm-exp/results/run_55_repetition_10/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/prettier--prettier-3.8.3.tgz -C npm-exp/results/run_55_repetition_10/decompressed/

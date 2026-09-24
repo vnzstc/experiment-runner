@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:17:14 2026
+# started on Fri Sep 18 16:35:00 2026
 
 
  Performance counter stats for 'system wide':
 
-             74.20 Joules power/energy-pkg/                                                     
-              9.03 Joules power/energy-ram/                                                     
+              5.24 Joules power/energy-pkg/                                                     
+              0.61 Joules power/energy-ram/                                                     
 
-       1.167491005 seconds time elapsed
+       0.081648432 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@next__swc-linux-arm64-musl--swc-linux-arm64-musl-16.2.6.tgz > npm-exp/results/run_53_repetition_9/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/libphonenumber-js--libphonenumber-js-1.13.3.tgz -C npm-exp/results/run_53_repetition_9/decompressed/

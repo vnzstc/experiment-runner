@@ -1,11 +1,11 @@
-# started on Fri Sep  4 08:49:44 2026
+# started on Fri Sep 18 19:05:07 2026
 
 
  Performance counter stats for 'system wide':
 
-             54.97 Joules power/energy-pkg/                                                     
-              6.60 Joules power/energy-ram/                                                     
+              1.89 Joules power/energy-pkg/                                                     
+              0.21 Joules power/energy-ram/                                                     
 
-       0.858251838 seconds time elapsed
+       0.029078659 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@next__swc-win32-ia32-msvc--swc-win32-ia32-msvc-14.2.16.tgz > npm-exp/results/run_45_repetition_0/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/prismjs--prismjs-1.30.0.tgz -C npm-exp/results/run_45_repetition_0/decompressed/

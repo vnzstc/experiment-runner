@@ -1,0 +1,11 @@
+# started on Sat Sep 19 20:44:51 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.25 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004332113 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/babel-plugin-transform-exponentiation-operator--babel-plugin-transform-exponentiation-operator-6.24.1.tar.br > npm-exp/results/run_270_repetition_23/decompressed/output.tar

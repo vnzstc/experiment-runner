@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:13:42 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.39 Joules power/energy-pkg/                                                     
+              0.05 Joules power/energy-ram/                                                     
+
+       0.006191309 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@aws-cdk__cloud-assembly-schema--cloud-assembly-schema-53.27.0.tar.zst -o npm-exp/results/run_189_repetition_8/decompressed/output.tar

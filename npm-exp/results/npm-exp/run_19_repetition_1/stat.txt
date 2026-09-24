@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:17:34 2026
+# started on Sat Sep 19 19:16:47 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.69 Joules power/energy-pkg/                                                     
-              0.92 Joules power/energy-ram/                                                     
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       0.120257250 seconds time elapsed
+       0.004975113 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@esbuild__freebsd-x64--freebsd-x64-0.28.0.tgz -C npm-exp/results/run_19_repetition_1/decompressed/
+tar -xzf npm-exp/pkgs/npm/whatwg-mimetype--whatwg-mimetype-5.0.0.tgz -C npm-exp/results/run_19_repetition_1/decompressed/

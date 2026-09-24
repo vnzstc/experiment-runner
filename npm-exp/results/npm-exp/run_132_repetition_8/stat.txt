@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:57:03 2026
+
+
+ Performance counter stats for 'system wide':
+
+             73.62 Joules power/energy-pkg/                                                     
+              8.68 Joules power/energy-ram/                                                     
+
+       1.164227456 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/@next__swc-linux-arm64-musl--swc-linux-arm64-musl-16.2.6.tgz > npm-exp/results/run_132_repetition_8/decompressed/output.tar

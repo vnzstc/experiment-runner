@@ -1,0 +1,11 @@
+# started on Fri Sep 18 17:03:19 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.89 Joules power/energy-pkg/                                                     
+              0.11 Joules power/energy-ram/                                                     
+
+       0.013719791 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/lodash-es--lodash-es-4.18.1.tgz > npm-exp/results/run_162_repetition_10/decompressed/output.tar

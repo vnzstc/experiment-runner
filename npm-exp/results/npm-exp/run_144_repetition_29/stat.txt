@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:18:02 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.23 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.003766314 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/babel-plugin-transform-exponentiation-operator--babel-plugin-transform-exponentiation-operator-6.24.1.tgz > npm-exp/results/run_144_repetition_29/decompressed/output.tar

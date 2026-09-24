@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:36:50 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.49 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
+
+       0.007411975 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/tailwindcss--tailwindcss-4.3.0.tar.br > npm-exp/results/run_305_repetition_27/decompressed/output.tar

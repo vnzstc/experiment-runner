@@ -1,0 +1,11 @@
+# started on Fri Sep 18 15:12:47 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004215371 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/whatwg-mimetype--whatwg-mimetype-5.0.0.tar.br > npm-exp/results/run_311_repetition_21/decompressed/output.tar

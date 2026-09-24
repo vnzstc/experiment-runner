@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:26:13 2026
+# started on Fri Sep 18 15:41:03 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.89 Joules power/energy-pkg/                                                     
-              0.95 Joules power/energy-ram/                                                     
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
 
-       0.121739198 seconds time elapsed
+       0.005206916 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@esbuild__linux-s390x--linux-s390x-0.28.0.tgz -C npm-exp/results/run_18_repetition_24/decompressed/
+tar -xzf npm-exp/pkgs/npm/fetch-blob--fetch-blob-4.0.0.tgz -C npm-exp/results/run_18_repetition_24/decompressed/

@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:24:20 2026
+# started on Fri Sep 18 19:16:36 2026
 
 
  Performance counter stats for 'system wide':
 
-             71.05 Joules power/energy-pkg/                                                     
-              8.62 Joules power/energy-ram/                                                     
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
 
-       1.100326309 seconds time elapsed
+       0.004578889 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@next__swc-linux-arm64-gnu--swc-linux-arm64-gnu-16.2.6.tgz -C npm-exp/results/run_7_repetition_1/decompressed/
+tar -xzf npm-exp/pkgs/npm/strict-uri-encode--strict-uri-encode-2.0.0.tgz -C npm-exp/results/run_7_repetition_1/decompressed/

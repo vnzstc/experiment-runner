@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:35:08 2026
+# started on Sat Sep 19 18:50:44 2026
 
 
  Performance counter stats for 'system wide':
 
-              2.91 Joules power/energy-pkg/                                                     
-              0.35 Joules power/energy-ram/                                                     
+              0.48 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
 
-       0.044022799 seconds time elapsed
+       0.007301837 seconds time elapsed
 
-zstd -d npm-exp/pkgs/zstd/@esbuild__linux-riscv64--linux-riscv64-0.28.0.tar.zst -o npm-exp/results/run_76_repetition_13/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/@vue__reactivity--reactivity-3.5.34.tar.xz > npm-exp/results/run_76_repetition_13/decompressed/output.taroutput.tar

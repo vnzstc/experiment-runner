@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:06:10 2026
+# started on Sat Sep 19 20:41:45 2026
 
 
  Performance counter stats for 'system wide':
 
-              3.28 Joules power/energy-pkg/                                                     
-              0.39 Joules power/energy-ram/                                                     
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
 
-       0.049073683 seconds time elapsed
+       0.003929009 seconds time elapsed
 
-zstd -d npm-exp/pkgs/zstd/@esbuild__linux-x64--linux-x64-0.28.0.tar.zst -o npm-exp/results/run_64_repetition_5/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/@babel__plugin-transform-regexp-modifiers--plugin-transform-regexp-modifiers-7.28.6.tar.xz > npm-exp/results/run_64_repetition_5/decompressed/output.taroutput.tar

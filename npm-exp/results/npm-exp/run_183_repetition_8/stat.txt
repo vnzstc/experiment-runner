@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:17:21 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.23 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.003420519 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/watchpack-chokidar2--watchpack-chokidar2-2.0.1.tgz > npm-exp/results/run_183_repetition_8/decompressed/output.tar

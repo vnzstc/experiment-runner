@@ -1,0 +1,11 @@
+# started on Fri Sep 18 18:31:36 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.004866901 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/has-to-string-tag-x--has-to-string-tag-x-2.1.2.tgz > npm-exp/results/run_154_repetition_25/decompressed/output.tar

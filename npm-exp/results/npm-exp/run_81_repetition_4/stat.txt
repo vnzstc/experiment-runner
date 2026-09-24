@@ -1,11 +1,11 @@
-# started on Fri Sep  4 09:17:42 2026
+# started on Fri Sep 18 18:50:46 2026
 
 
  Performance counter stats for 'system wide':
 
-             32.32 Joules power/energy-pkg/                                                     
-              3.85 Joules power/energy-ram/                                                     
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
 
-       0.485190283 seconds time elapsed
+       0.004259208 seconds time elapsed
 
-zstd -d npm-exp/pkgs/zstd/@next__swc-win32-x64-msvc--swc-win32-x64-msvc-16.2.6.tar.zst -o npm-exp/results/run_81_repetition_4/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/babel-plugin-transform-exponentiation-operator--babel-plugin-transform-exponentiation-operator-6.24.1.tar.xz > npm-exp/results/run_81_repetition_4/decompressed/output.taroutput.tar

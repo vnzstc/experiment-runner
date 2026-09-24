@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:09:59 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.51 Joules power/energy-pkg/                                                     
+              0.06 Joules power/energy-ram/                                                     
+
+       0.008104959 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/ts-node--ts-node-10.9.2.tar.br > npm-exp/results/run_307_repetition_29/decompressed/output.tar

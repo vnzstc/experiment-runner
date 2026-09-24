@@ -1,0 +1,11 @@
+# started on Sat Sep 19 21:05:10 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004229242 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@babel__plugin-transform-regexp-modifiers--plugin-transform-regexp-modifiers-7.28.6.tar.br > npm-exp/results/run_253_repetition_20/decompressed/output.tar

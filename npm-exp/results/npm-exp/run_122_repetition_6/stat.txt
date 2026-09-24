@@ -1,0 +1,11 @@
+# started on Fri Sep 18 18:14:14 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004718751 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/whatwg-mimetype--whatwg-mimetype-5.0.0.tar.xz > npm-exp/results/run_122_repetition_6/decompressed/output.taroutput.tar

@@ -1,0 +1,11 @@
+# started on Sat Sep 19 19:01:17 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.003873374 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/shallowequal--shallowequal-1.1.0.tgz > npm-exp/results/run_174_repetition_28/decompressed/output.tar

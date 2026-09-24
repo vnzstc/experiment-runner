@@ -1,0 +1,11 @@
+# started on Fri Sep 18 17:25:10 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.38 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.005165625 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/encoding-sniffer--encoding-sniffer-1.0.2.tgz > npm-exp/results/run_148_repetition_25/decompressed/output.tar

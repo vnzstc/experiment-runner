@@ -1,11 +1,11 @@
-# started on Fri Sep  4 08:43:45 2026
+# started on Sat Sep 19 17:36:35 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.55 Joules power/energy-pkg/                                                     
-              0.90 Joules power/energy-ram/                                                     
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
 
-       0.117825238 seconds time elapsed
+       0.004524733 seconds time elapsed
 
-tar -xzf npm-exp/pkgs/npm/@esbuild__win32-ia32--win32-ia32-0.28.0.tgz -C npm-exp/results/run_2_repetition_14/decompressed/
+tar -xzf npm-exp/pkgs/npm/babel-helper-get-function-arity--babel-helper-get-function-arity-6.24.1.tgz -C npm-exp/results/run_2_repetition_14/decompressed/

@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:04:39 2026
+# started on Fri Sep 18 18:57:05 2026
 
 
  Performance counter stats for 'system wide':
 
-              7.97 Joules power/energy-pkg/                                                     
-              0.96 Joules power/energy-ram/                                                     
+              2.11 Joules power/energy-pkg/                                                     
+              0.24 Joules power/energy-ram/                                                     
 
-       0.125270751 seconds time elapsed
+       0.032476216 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@esbuild__sunos-x64--sunos-x64-0.28.0.tgz > npm-exp/results/run_49_repetition_14/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/xml2js--xml2js-0.6.2.tgz -C npm-exp/results/run_49_repetition_14/decompressed/

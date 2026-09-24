@@ -1,0 +1,11 @@
+# started on Fri Sep 18 19:02:38 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.27 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.003768784 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@ethersproject__abstract-signer--abstract-signer-5.8.0.tar.zst -o npm-exp/results/run_193_repetition_24/decompressed/output.tar

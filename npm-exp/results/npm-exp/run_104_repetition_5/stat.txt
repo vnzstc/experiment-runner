@@ -1,11 +1,11 @@
-# started on Fri Sep  4 10:35:50 2026
+# started on Fri Sep 18 16:21:26 2026
 
 
  Performance counter stats for 'system wide':
 
-              5.62 Joules power/energy-pkg/                                                     
-              0.67 Joules power/energy-ram/                                                     
+              2.77 Joules power/energy-pkg/                                                     
+              0.33 Joules power/energy-ram/                                                     
 
-       0.087849398 seconds time elapsed
+       0.043637553 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@esbuild__linux-ia32--linux-ia32-0.28.0.tar.br > npm-exp/results/run_104_repetition_5/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/prismjs--prismjs-1.30.0.tar.xz > npm-exp/results/run_104_repetition_5/decompressed/output.taroutput.tar

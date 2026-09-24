@@ -1,0 +1,11 @@
+# started on Fri Sep 18 15:06:16 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.25 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004013456 seconds time elapsed
+
+xz -dc npm-exp/pkgs/xz/remove-trailing-separator--remove-trailing-separator-1.1.0.tar.xz > npm-exp/results/run_109_repetition_21/decompressed/output.taroutput.tar

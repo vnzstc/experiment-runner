@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:49:21 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.39 Joules power/energy-pkg/                                                     
+              0.05 Joules power/energy-ram/                                                     
+
+       0.006075097 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/workbox-routing--workbox-routing-7.4.1.tgz > npm-exp/results/run_186_repetition_24/decompressed/output.tar

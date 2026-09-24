@@ -1,0 +1,11 @@
+# started on Fri Sep 18 16:08:18 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.87 Joules power/energy-pkg/                                                     
+              0.22 Joules power/energy-ram/                                                     
+
+       0.029136564 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/webpack--webpack-5.107.1.tar.br > npm-exp/results/run_310_repetition_0/decompressed/output.tar

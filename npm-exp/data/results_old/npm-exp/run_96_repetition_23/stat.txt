@@ -1,0 +1,11 @@
+# started on Fri Sep  4 11:34:36 2026
+
+
+ Performance counter stats for 'system wide':
+
+             39.06 Joules power/energy-pkg/                                                     
+              4.74 Joules power/energy-ram/                                                     
+
+       0.600927160 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@next__swc-win32-arm64-msvc--swc-win32-arm64-msvc-16.2.6.tar.br > npm-exp/results/run_96_repetition_23/decompressed/output.tar

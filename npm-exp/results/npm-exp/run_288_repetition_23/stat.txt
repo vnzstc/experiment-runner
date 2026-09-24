@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:31:24 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.63 Joules power/energy-pkg/                                                     
+              0.07 Joules power/energy-ram/                                                     
+
+       0.009516996 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/lodash-es--lodash-es-4.18.1.tar.br > npm-exp/results/run_288_repetition_23/decompressed/output.tar

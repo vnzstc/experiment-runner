@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:29:25 2026
+# started on Sat Sep 19 19:16:01 2026
 
 
  Performance counter stats for 'system wide':
 
-            152.20 Joules power/energy-pkg/                                                     
-             18.25 Joules power/energy-ram/                                                     
+              0.64 Joules power/energy-pkg/                                                     
+              0.07 Joules power/energy-ram/                                                     
 
-       2.383938641 seconds time elapsed
+       0.009626654 seconds time elapsed
 
-xz -dc npm-exp/pkgs/xz/@next__swc-darwin-arm64--swc-darwin-arm64-16.2.6.tar.xz > npm-exp/results/run_35_repetition_17/decompressed/output.taroutput.tar
+tar -xzf npm-exp/pkgs/npm/@eslint__eslintrc--eslintrc-3.3.5.tgz -C npm-exp/results/run_35_repetition_17/decompressed/

@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:24:15 2026
+
+
+ Performance counter stats for 'system wide':
+
+              1.78 Joules power/energy-pkg/                                                     
+              0.21 Joules power/energy-ram/                                                     
+
+       0.027502182 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/prismjs--prismjs-1.30.0.tgz > npm-exp/results/run_167_repetition_3/decompressed/output.tar

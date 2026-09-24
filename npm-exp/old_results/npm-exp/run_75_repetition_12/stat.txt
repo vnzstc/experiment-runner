@@ -1,0 +1,11 @@
+# started on Fri Sep  4 11:43:55 2026
+
+
+ Performance counter stats for 'system wide':
+
+              3.08 Joules power/energy-pkg/                                                     
+              0.36 Joules power/energy-ram/                                                     
+
+       0.046654285 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@esbuild__freebsd-x64--freebsd-x64-0.28.0.tar.zst -o npm-exp/results/run_75_repetition_12/decompressed/output.tar

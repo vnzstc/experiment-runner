@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:27:53 2026
+# started on Sat Sep 19 20:19:08 2026
 
 
  Performance counter stats for 'system wide':
 
-             81.32 Joules power/energy-pkg/                                                     
-              9.76 Joules power/energy-ram/                                                     
+              6.98 Joules power/energy-pkg/                                                     
+              0.82 Joules power/energy-ram/                                                     
 
-       1.280088372 seconds time elapsed
+       0.107522653 seconds time elapsed
 
-gzip -dc npm-exp/pkgs/zopfli/@next__swc-win32-x64-msvc--swc-win32-x64-msvc-16.2.6.tgz > npm-exp/results/run_56_repetition_3/decompressed/output.tar
+tar -xzf npm-exp/pkgs/npm/ethers--ethers-6.16.0.tgz -C npm-exp/results/run_56_repetition_3/decompressed/

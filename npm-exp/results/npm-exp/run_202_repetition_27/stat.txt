@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:48:47 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.32 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.004366059 seconds time elapsed
+
+zstd -d npm-exp/pkgs/zstd/@vue__reactivity--reactivity-3.5.34.tar.zst -o npm-exp/results/run_202_repetition_27/decompressed/output.tar

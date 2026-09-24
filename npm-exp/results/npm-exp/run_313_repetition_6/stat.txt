@@ -1,0 +1,11 @@
+# started on Sat Sep 19 20:01:54 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.35 Joules power/energy-pkg/                                                     
+              0.04 Joules power/energy-ram/                                                     
+
+       0.005072159 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/workbox-streams--workbox-streams-7.4.1.tar.br > npm-exp/results/run_313_repetition_6/decompressed/output.tar

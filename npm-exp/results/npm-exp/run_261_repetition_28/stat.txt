@@ -1,0 +1,11 @@
+# started on Sat Sep 19 18:43:58 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004079413 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/@radix-ui__primitive--primitive-1.1.3.tar.br > npm-exp/results/run_261_repetition_28/decompressed/output.tar

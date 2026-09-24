@@ -1,0 +1,11 @@
+# started on Fri Sep 18 15:13:39 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004122453 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/remove-trailing-separator--remove-trailing-separator-1.1.0.tgz > npm-exp/results/run_172_repetition_26/decompressed/output.tar

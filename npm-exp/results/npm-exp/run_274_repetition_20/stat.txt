@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:57:45 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004624130 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/encoding-sniffer--encoding-sniffer-1.0.2.tar.br > npm-exp/results/run_274_repetition_20/decompressed/output.tar

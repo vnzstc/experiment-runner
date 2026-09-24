@@ -1,0 +1,11 @@
+# started on Sat Sep 19 17:49:38 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.25 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004016165 seconds time elapsed
+
+gzip -dc npm-exp/pkgs/zopfli/assert-plus--assert-plus-1.0.0.tgz > npm-exp/results/run_140_repetition_4/decompressed/output.tar

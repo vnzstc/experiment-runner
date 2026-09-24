@@ -1,0 +1,11 @@
+# started on Fri Sep 18 19:01:15 2026
+
+
+ Performance counter stats for 'system wide':
+
+              0.26 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
+
+       0.004025070 seconds time elapsed
+
+brotli -dc npm-exp/pkgs/brotli/remove-trailing-separator--remove-trailing-separator-1.1.0.tar.br > npm-exp/results/run_298_repetition_1/decompressed/output.tar

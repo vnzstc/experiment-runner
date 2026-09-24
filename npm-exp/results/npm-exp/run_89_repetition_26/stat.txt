@@ -1,11 +1,11 @@
-# started on Fri Sep  4 11:35:56 2026
+# started on Fri Sep 18 19:06:52 2026
 
 
  Performance counter stats for 'system wide':
 
-              6.51 Joules power/energy-pkg/                                                     
-              0.79 Joules power/energy-ram/                                                     
+              0.29 Joules power/energy-pkg/                                                     
+              0.03 Joules power/energy-ram/                                                     
 
-       0.101375717 seconds time elapsed
+       0.004246997 seconds time elapsed
 
-brotli -dc npm-exp/pkgs/brotli/@esbuild__darwin-x64--darwin-x64-0.28.0.tar.br > npm-exp/results/run_89_repetition_26/decompressed/output.tar
+xz -dc npm-exp/pkgs/xz/fetch-blob--fetch-blob-4.0.0.tar.xz > npm-exp/results/run_89_repetition_26/decompressed/output.taroutput.tar
